@@ -1,4 +1,4 @@
-coffeeson = require 'coffeeson'
+
 module.exports = (robot) ->
    robot.hear /(.*)/i, (res) ->
      ques = res.match[1]
