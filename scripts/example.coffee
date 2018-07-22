@@ -8,24 +8,56 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-module.exports = (robot) ->
+###module.exports = (robot) ->
 
    robot.hear /badger/i, (res) ->
      res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
   
    robot.hear /priyanka/i, (res) ->
      res.send "hello priyanka how are u?"
+###
+  module.exports = function(robot) {
+  robot.hear(/^(.*)/, function(msg) {
+  var content = msg.match.input;
+  
+ });
+} res.send content
+###
+call = "https://aaa@api.twilio.com/2010-04-01/Accounts/sasa/Calls.xml"
+  fields = { To : "+12321434", From : req.body.from }
+
+  request.post 
+  url: call, body: fields (err,response,body) ->
+    console.log response.body
    
-   robot.respond /open the (.*) doors/i, (res) ->
-     doorType = res.match[1]
-     if doorType is "pod bay"
-       res.reply "I'm afraid I can't let you do that."
-     else
-       res.reply "Opening #{doorType} doors"
+   robot.http("https://midnight-train")
+    .header('Accept', 'application/json')
+    .get() (err, response, body) ->
+      # error checking code here
+
+      data = JSON.parse body
+      res.send "#{data.passenger} taking midnight train going #{data.destination}"
+
+###
+
+
+
+
+
+
+
+
+
+#   robot.respond /open the (.*) doors/i, (res) ->
+ #    doorType = res.match[1]
+  #   if doorType is "pod bay"
+   #    res.reply "I'm afraid I can't let you do that."
+    # else
+     #  res.reply "Opening #{doorType} doors"
   #
-   robot.hear /I like pie/i, (res) ->
-     res.emote "makes a freshly baked pie"
-  #
+   #robot.hear /I like pie/i, (res) ->
+    # res.emote "makes a freshly baked pie"
+  ###
    lulz = ['lol', 'rofl', 'lmao']
   #
    robot.respond /lulz/i, (res) ->
@@ -106,4 +138,4 @@ module.exports = (robot) ->
   #
    robot.respond /sleep it off/i, (res) ->
      robot.brain.set 'totalSodas', 0
-     res.reply 'zzzzz'
+     res.reply 'zzzzz'###
