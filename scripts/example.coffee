@@ -13,12 +13,11 @@ module.exports = (robot) ->
                if err
                   res.send "Encountered an error :( #{err}"
                   return
-               
-               res.send "#{body}"
-               #y=JSON.stringify(body)
-               #z=y.options['answer']
-               
-               #data= JSON.parse(body)
-               #y=coffeeson.parse data.options
-               
+               #res.send "#{body}"
+               data=JSON.parse(body);
+               for i of  data.options
+                   counter = data.options[i];
+                   res.send "#{i} #{counter.answer}";
 
+
+              
