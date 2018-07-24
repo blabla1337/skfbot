@@ -17,7 +17,10 @@ module.exports = (robot) ->
                data=JSON.parse(body);
                for i of  data.options
                    counter = data.options[i];
-                   res.send "#{i} #{counter.answer}";
-
+                   #res.send "#{counter.length}";
+                   #if counter.length==1
+                   res.send "#{counter.answer}";
+                   #else
+                    #  res.send "#{i} #{counter.answer}";
 
               

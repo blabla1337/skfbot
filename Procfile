@@ -1,1 +1,1 @@
-web: bin/hubot -a gitter2
+hubot: bin/hubot -a gitter2
