@@ -20,7 +20,7 @@ module.exports = (robot) ->
                    #res.send "#{counter.length}";
                    #if counter.length==1
                    res.send "#{counter.answer}";
-                   #else
+             
                     #  res.send "#{i} #{counter.answer}";
 
               
