@@ -40,7 +40,7 @@ sol = (res, robot, ques, user_id)->
                     for i,value in result
                         CONTEXT["#{GITTER_PREFIX}" +user_id] = result
                         #console.log(CONTEXT["#{GITTER_PREFIX}" +user_id]);
-                        res.send i,"#{value}";
+                        res.send "#{value}"+" "+"#{i}";
 
                     ## user_id, save the context for this person
                     #CONTEXT["#{GITTER_PREFIX}" +user_id] = result
