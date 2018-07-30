@@ -40,7 +40,7 @@ To get hubot, or in our case skfbot running, these are the steps that had to be 
 * `heroku config:set HUBOT_GITTER2_TESTING_ROOMS=Security-Knowledge-Framework/Lobby` (this was used initially to verify that it was working on one room in particular, but it was later removed so that any room that skfbot user is signed into will respond to commands)
 * `heroku config:set HUBOT_ADAPTER="gitter2"` (this ensures we use the gitter2 adapter)
 * `heroku addons:create scheduler:standard` (this adds the free heroku scheduler to your account)
-* `Sign into your heroku account, and click on the newly created scheduler
+* Sign into your heroku account, and click on the newly created scheduler
 ![image](https://cloud.githubusercontent.com/assets/1271146/13035913/173d6322-d352-11e5-931f-4dbf73f45e4b.png)
 
 * Edit the settings of the job to look like the following:
