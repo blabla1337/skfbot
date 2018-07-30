@@ -158,7 +158,9 @@ Please check out the [deploying hubot onto UNIX][deploy-unix] and
 
 ## If the bot listens to everything in the lobby try adding this in your code:
 
-    ```robot.hear /@skfchatbot (.*)/i, (res)->``` 
+    ```
+    robot.hear /@skfchatbot (.*)/i, (res)->
+    ``` 
 
 **After this it will only listens to its name**
 
