@@ -37,7 +37,7 @@ For, resolving that issue that it only listens when we refer it change the code 
 robot.hear /@skfchatbot (.*)/i, (res)->
            ques = res.match[1]; 
 ```
-Here, write the name *@skfchatbot* for so that it will only listen when is name is being called.
+Here, write the name *@skfchatbot* so that it will only listen when its name is being called.
 ```
    res.send "msg"
 ```
