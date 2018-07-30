@@ -33,7 +33,7 @@ sol = (res, robot, ques, user_id)->
                     counter = data.options[i];
                     result.push "#{counter.answer}";
 
-                if result.length ==1
+                if result[0].length>80
                     delete CONTEXT["#{GITTER_PREFIX}"+ user_id];
                     res.send "#{result}";
                 else
