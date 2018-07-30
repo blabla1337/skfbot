@@ -100,21 +100,6 @@ Hubot is able to load scripts from third-party `npm` package. Check the package'
 
 You can review `external-scripts.json` to see what is included by default.
 
-##  Persistence
-
-If you are going to use the `hubot-redis-brain` package
-(strongly suggested), you will need to add the Redis to Go addon on Heroku which requires a verified
-account or you can create an account at [Redis to Go][redistogo] and manually
-set the `REDISTOGO_URL` variable.
-
-    % heroku config:add REDISTOGO_URL="..."
-
-If you don't require any persistence feel free to remove the
-`hubot-redis-brain` from `external-scripts.json` and you don't need to worry
-about redis at all.
-
-[redistogo]: https://redistogo.com/
-
 ## Adapters
 
 Adapters are the interface to the service you want your hubot to run on. This
@@ -163,30 +148,13 @@ Please check out the [deploying hubot onto UNIX][deploy-unix] and
 [deploy-unix]: https://github.com/github/hubot/blob/master/docs/deploying/unix.md
 [deploy-windows]: https://github.com/github/hubot/blob/master/docs/deploying/unix.md
 
-## Campfire Variables
+## If the bot listens to everything in the lobby try adding this in your code:
 
-If you are using the Campfire adapter you will need to set some environment
-variables. Refer to the documentation for other adapters and the configuraiton
-of those, links to the adapters can be found on [Hubot Adapters][hubot-adapters].
+    ```robot.hear /@skfchatbot (.*)/i, (res)->``` 
 
-Create a separate Campfire user for your bot and get their token from the web
-UI.
+**After this it will only listens to its name**
 
-    % heroku config:add HUBOT_CAMPFIRE_TOKEN="..."
-
-Get the numeric IDs of the rooms you want the bot to join, comma delimited. If
-you want the bot to connect to `https://mysubdomain.campfirenow.com/room/42`
-and `https://mysubdomain.campfirenow.com/room/1024` then you'd add it like this:
-
-    % heroku config:add HUBOT_CAMPFIRE_ROOMS="42,1024"
-
-Add the subdomain hubot should connect to. If you web URL looks like
-`http://mysubdomain.campfirenow.com` then you'd add it like this:
-
-    % heroku config:add HUBOT_CAMPFIRE_ACCOUNT="mysubdomain"
-
-[hubot-adapters]: https://github.com/github/hubot/blob/master/docs/adapters.md
-
+More details in *Script* folder
 ## Restart the bot
 
 You may want to get comfortable with `heroku logs` and `heroku restart`
