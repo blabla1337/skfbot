@@ -3,7 +3,7 @@ GITTER_PREFIX = 'GITTER'
 CONTEXT = {}
 
 module.exports = (robot) ->
-    robot.hear /(.*)/i, (res) ->
+    robot.hear /@skfchatbot (.*)/i, (res) ->
         ## Get the input from the user
         ques = res.match[1];
         ##fetching the gitter user id
