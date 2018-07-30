@@ -28,8 +28,16 @@ robot.hear /(.*)/i, (res) ->
          ques = res.match[1]; 
 ```
 
-This snippet is used for reading the user input from gitter and assigning it to the variable in ques.
+This snippet is used for reading the user input from gitter and assigning it to the variable ques.
+But this snippet has a drawback it will listen to everything like if in ithe lobby you talk to other people then it will start responding automatically.
 
+For, resolving that issue that it only listens when we refer it change the code snippet with following: 
+
+```
+robot.hear /@skfchatbot (.*)/i, (res)->
+           ques = res.match[1]; 
+```
+Here, write the name *@skfchatbot* for so that it will only listen when is name is being called.
 ```
    res.send "msg"
 ```
