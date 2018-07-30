@@ -31,7 +31,7 @@ robot.hear /(.*)/i, (res) ->
 This snippet is used for reading the user input from gitter and assigning it to the variable in ques.
 
 ```javascript
-   res.send "msg" 
-   ```
+   res.send "msg"
+```
 
 This one is used for sending back the response to the user.
