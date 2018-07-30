@@ -46,7 +46,7 @@ To get hubot, or in our case skfbot running, these are the steps that had to be 
 
 If all of the above has worked, go to your Gitter Chat Room, and try issuing a hubot command like `@skfbot ping` and hopefully you will see the following:
 
-![image](https://drive.google.com/file/d/11ZR36zNr2A6_Yc0-al00CqtGioMZeq4U/view?usp=sharing)
+![image](https://github.com/Priya997/skfbot/blob/master/Screenshot_1.png)
 
 
 ### Running skfbot Locally
