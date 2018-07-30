@@ -23,10 +23,10 @@ You can check this bot on gitter.im in the following lobbies:
 You can check the example.coffee
 
 Here,
-* ' robot.hear /(.*)/i, (res) -> '
-*        ' ques = res.match[1]; '
+ ''' robot.hear /(.*)/i, (res) -> 
+         ques = res.match[1]; '''
 
 This snippet is used for reading the user input from gitter and assigning it to the variable in ques.
 
-* ' res.send "msg" '
+* ''' res.send "msg" '''
 This one is used for sending back the response to the user.
