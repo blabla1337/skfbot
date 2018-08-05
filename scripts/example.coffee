@@ -46,4 +46,4 @@ sol = (res, robot, ques, user_id, user_name, msg_time)->
                         ##setting up the context
                         CONTEXT["#{GITTER_PREFIX}" +user_id] = result
                         #console.log(CONTEXT["#{GITTER_PREFIX}" +user_id]);
-                        res.send "@#{user_name}  #{msg_time}+ #{value}"+" "+"#{i}";
+                        res.send "@#{user_name}  #{msg_time} #{value}"+" "+"#{i}";
