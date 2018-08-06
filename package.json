@@ -2,14 +2,11 @@
   "name": "skfbot",
   "version": "0.0.0",
   "private": true,
-
   "author": "Priya997 <priyankajain997@gmail.com>",
-
   "description": "A simple helpful robot for your Company",
-
   "dependencies": {
+    "hubot-gitter2": "^1.0.0"
   },
-
   "engines": {
     "node": "0.10.x"
   }
