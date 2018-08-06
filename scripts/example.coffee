@@ -9,6 +9,7 @@ module.exports = (robot) ->
         ##fetching the gitter user id
         user_id = res.message.user.id
         user_name = res.message.user.name
+        console.log(res.message.GitterUser)
         #console.log("UserID", user_id)
         msg_time=new Date().toLocaleTimeString()
         
