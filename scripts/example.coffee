@@ -3,13 +3,15 @@ GITTER_PREFIX = 'GITTER'
 CONTEXT = {}
 
 module.exports = (robot) ->
-    robot.hear /@skfchatbot (.*)/i, (res) ->
+    robot.hear /@pinka (.*)/i, (res) ->
         ## Get the input from the user
         ques = res.match[1];
+        #console.log(res.message)
         ##fetching the gitter user id
         user_id = res.message.user.id
         user_name = res.message.user.name
-        #console.log(res.message.GitterUser)
+        #username=res.message.user.id
+        #console.log(res.message.user)
         #console.log("UserID", user_id)
         msg_time=new Date().toLocaleTimeString()
         
@@ -47,4 +49,4 @@ sol = (res, robot, ques, user_id, user_name, msg_time)->
                         ##setting up the context
                         CONTEXT["#{GITTER_PREFIX}" +user_id] = result
                         #console.log(CONTEXT["#{GITTER_PREFIX}" +user_id]);
-                        res.send "@#{user_name}  #{msg_time}+ #{value}"+" "+"#{i}";
+                        res.send "@#{user_name}  #{msg_time} #{value}"+" "+"#{i}";
