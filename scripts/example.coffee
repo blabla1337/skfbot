@@ -44,6 +44,9 @@ sol = (res, robot, ques, user_id, user_name, msg_time)->
                     delete CONTEXT["#{GITTER_PREFIX}"+ user_id];
                     res.send "@#{user_name} #{msg_time} #{result}";
                 ##multiple item in the list
+                else if result[0]=="Please be more specific"
+                    delete CONTEXT["#{GITTER_PREFIX}"+ user_id];
+                    res.send "@#{user_name} #{msg_time} #{result}";
                 else
                     for i,value in result
                         ##setting up the context
