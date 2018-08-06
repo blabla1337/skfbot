@@ -8,17 +8,19 @@ module.exports = (robot) ->
         ques = res.match[1];
         ##fetching the gitter user id
         user_id = res.message.user.id
+        user_name = res.message.user.name
         #console.log("UserID", user_id)
-
+        msg_time=new Date().toLocaleTimeString()
+        
         ## check if some context exists
         if CONTEXT["#{GITTER_PREFIX}" +user_id]
-            sol(res, robot, CONTEXT["#{GITTER_PREFIX}"+ user_id][ques], user_id);
+            sol(res, robot, CONTEXT["#{GITTER_PREFIX}"+ user_id][ques], user_id, user_name, msg_time);
             return
 
-        sol(res, robot, ques, user_id);
+        sol(res, robot, ques, user_id, user_name, msg_time);
 
 ##Function which will provide the solution on the basis os user's query  
-sol = (res, robot, ques, user_id)->
+sol = (res, robot, ques, user_id, user_name, msg_time)->
     robot.http("https://demo.securityknowledgeframework.org/api/chatbot/question","rejectUnauthorized": false)
           .header('Content-Type', 'application/json')
           .header('Accept', 'application/json')
@@ -37,11 +39,11 @@ sol = (res, robot, ques, user_id)->
                 ##if we have a single item in the list
                 if result[0].length>80
                     delete CONTEXT["#{GITTER_PREFIX}"+ user_id];
-                    res.send "#{result}";
+                    res.send "@#{user_name} #{msg_time} #{result}";
                 ##multiple item in the list
                 else
                     for i,value in result
                         ##setting up the context
                         CONTEXT["#{GITTER_PREFIX}" +user_id] = result
                         #console.log(CONTEXT["#{GITTER_PREFIX}" +user_id]);
-                        res.send "#{value}"+" "+"#{i}";
+                        res.send "@#{user_name}  #{msg_time}+ #{value}"+" "+"#{i}";
