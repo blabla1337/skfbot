@@ -8,6 +8,7 @@
     "hubot-gitter2": "^1.0.0"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "8.10.0"
+    "npm": "5.10.0"
   }
 }
