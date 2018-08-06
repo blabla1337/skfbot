@@ -6,7 +6,6 @@ module.exports = (robot) ->
     robot.hear /@pinka (.*)/i, (res) ->
         ## Get the input from the user
         ques = res.match[1];
-        #console.log(res.message)
         ##fetching the gitter user id
         user_id = res.message.user.id
         user_name = res.message.user.name
@@ -42,14 +41,14 @@ sol = (res, robot, ques, user_id, user_name, msg_time)->
                 ##if we have a single item in the list
                 if result[0].length>80
                     delete CONTEXT["#{GITTER_PREFIX}"+ user_id];
-                    res.send "@#{user_name} #{result} #{msg_time}";
+                    res.send "@#{user_name} #{result} (#{msg_time}) ";
                 ##multiple item in the list
                 else if result[0]=="Please be more specific"
                     delete CONTEXT["#{GITTER_PREFIX}"+ user_id];
-                    res.send "@#{user_name} #{result} #{msg_time}";
+                    res.send "@#{user_name} #{result} (#{msg_time})";
                 else
                     for i,value in result
                         ##setting up the context
                         CONTEXT["#{GITTER_PREFIX}" +user_id] = result
                         #console.log(CONTEXT["#{GITTER_PREFIX}" +user_id]);
-                        res.send "@#{user_name} #{value}"+" "+"#{i}  #{msg_time}";
+                        res.send "@#{user_name} #{value}"+" "+"#{i}  (#{msg_time})";
